@@ -1,0 +1,24 @@
+#include <AltController.h> //add the AltController library
+
+//Add variables for the Pin Numbers and Sensitivity here
+
+int nPin = 2;
+int nSensitivity = 550;
+
+int lPin = 4;
+int lSensitivity = 120;
+
+
+AltController toaster;
+
+void setup() 
+{
+//Add the commands here  
+toaster.addKeyPress(nPin, 's', nSensitivity);
+toaster.addKeyRelease(lPin, 'w', lSensitivity);
+}
+
+void loop() 
+{
+    toaster.update();
+}
